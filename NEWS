@@ -1,0 +1,37 @@
+ALKr 0.5
+==========
+
+* New S4 class `summary_ALKr`
+
+ALKr 0.4.1
+==========
+
+* Fix bug on `inverse_ALK.R`
+
+ALKr 0.4
+========
+
+* `hoenig` is now also implemented in C++ and runs about 6.5x faster
+
+ALKr 0.3
+========
+
+* Added `age_slicing` for simple application of the knife-edge method, using
+  von Bertalanffy's growth equation to convert length distributions in age
+  distributions
+* Added `mixed_dist` to extract age distributions from age-overlapping length
+  distributions, using the `mixdist` package.
+
+ALKr 0.2
+========
+
+* Now using `Rcpp`. `gascuel` is the first algorithm partially implemented in
+  C++, resulting in a median speedup of about 15x.
+* Removed `age_classes` and `length_classes` slot from the 'ALKr' class, as they
+  are redundant. All methods generating `ALKr` objects are assumed to pass them
+  as respectively column and rownames of the `alk` slot.
+
+ALKr 0.1
+========
+
+* Initial version.
