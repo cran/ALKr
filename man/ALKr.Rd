@@ -8,7 +8,9 @@
   complete or incomplete data.
 }
 \details{
-  This will be a more detailed description.
+  A collection of functions that implement several
+  algorithms for generating age-length keys for fish
+  populations from incomplete data.
 }
 \references{
   Alberto Murta, Jose Francisco Loff, Laura Wise, Manuela

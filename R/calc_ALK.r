@@ -24,3 +24,4 @@ calc_ALK <- function(x) {
   ni[ni == 0] <- 1
   return(x / ni)
 }
+

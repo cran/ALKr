@@ -7,23 +7,27 @@
 \usage{
   gascuel(x, fi1, fi2, initial_values, threshold = 1e-04,
     maxiter = 2000, age_classes = colnames(x),
-    length_classes = rownames(x))
+    length_classes = rownames(x), name = "",
+    description = "")
 
   hoenig_heisey(x, fi1, fi2, threshold = 1e-04,
     maxiter = 2000, age_classes = colnames(x),
-    length_classes = rownames(x))
+    length_classes = rownames(x), name = "",
+    description = "")
 
   inverse_ALK(x, fi1, fi2, age_classes = colnames(x),
-    length_classes = rownames(x))
+    length_classes = rownames(x), name = "",
+    description = "")
 
   kimura_chikuni(x, fi1, fi2, threshold = 1e-04,
     maxiter = 2000, age_classes = colnames(x),
-    length_classes = rownames(x))
+    length_classes = rownames(x), name = "",
+    description = "")
 }
 \arguments{
-  \item{x}{A matrix with \code{i} lines and \code{j}
-  columns, where \code{x[i, j]} is the count of individuals
-  of length \code{i} and age \code{j}.}
+  \item{x}{A \eqn{i \times j} matrix with \code{i} lines
+  and \code{j} columns, where \code{x[i, j]} is the count
+  of individuals of length \code{i} and age \code{j}.}
 
   \item{fi1}{A vector of length \code{i} where \code{fi[i]}
   is the number of fish in the length-class \code{i} on the
@@ -48,13 +52,18 @@
   \item{initial_values}{A vector with the initial values
   for \eqn{\alpha}, \eqn{\beta} and \eqn{\gamma}: see
   `details'.}
+
+  \item{name}{A string with the name of the ALK.}
+
+  \item{description}{A string describing the ALK.}
 }
 \value{
-  An \code{ALKr} object, containing a matrix with the
-  probability of an individual of age \code{j} having
-  length \code{i}, i.e. \eqn{P(i|j)}, the vectors of age
-  and length classes, and information about the method used
-  to generate the key.
+  An \code{ALKr} object, containing a \eqn{i \times j}
+  matrix with the probability of an individual of length
+  \code{i} having age \code{j}, i.e. \eqn{P(j|i)}, a \eqn{i
+  \times j} matrix with the estimated number of individuals
+  of length \code{i} and age \code{j}, and information
+  about the method used to generate the key.
 }
 \description{
   Generation of Age-Length Keys (ALK) using incomplete

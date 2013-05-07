@@ -2,7 +2,8 @@
 #' @export
 kimura_chikuni <- function(x, fi1, fi2, threshold = 0.0001, maxiter = 2000,
                           age_classes = colnames(x),
-                          length_classes = rownames(x)) {
+                           length_classes = rownames(x), name = "",
+                           description = "") {
   
   invAlk <- calc_invALK(calc_ALK(x), fi1)
   pj2 <- rep(1 / ncol(x), ncol(x))
@@ -23,6 +24,9 @@ kimura_chikuni <- function(x, fi1, fi2, threshold = 0.0001, maxiter = 2000,
       parameters = list(
         ConvergenceThreshold = threshold,
         Iterations = iter,
-        Converged = iter < maxiter)
+        Converged = iter < maxiter),
+      name = name,
+      description = description
   )
 }
+

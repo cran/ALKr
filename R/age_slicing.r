@@ -46,3 +46,4 @@ age_slicing <- function(fi, li = as.numeric(names(fi)), vb_params, age_limits,
   
   tapply(fi, age, sum)
 }
+

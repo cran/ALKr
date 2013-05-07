@@ -49,8 +49,8 @@
 #' number of iterations reaches \code{maxiter}.
 #' }
 #' 
-#' @param x A matrix with \code{i} lines and \code{j} columns, where
-#' \code{x[i, j]} is the count of individuals of length \code{i} and age
+#' @param x A \eqn{i \times j} matrix with \code{i} lines and \code{j} columns,
+#' where \code{x[i, j]} is the count of individuals of length \code{i} and age
 #' \code{j}.
 #' @param fi1 A vector of length \code{i} where \code{fi[i]} is the number of
 #' fish in the length-class \code{i} on the population from which \code{x} was
@@ -66,11 +66,14 @@
 #' `details'.
 #' @param initial_values A vector with the initial values for \eqn{\alpha},
 #' \eqn{\beta} and \eqn{\gamma}: see `details'.
+#' @param name A string with the name of the ALK.
+#' @param description A string describing the ALK.
 #' 
-#' @return An \code{ALKr} object, containing a matrix with the probability of an
-#' individual of age \code{j} having length \code{i}, i.e. \eqn{P(i|j)}, the
-#' vectors of age and length classes, and information about the method used to
-#' generate the key.
+#' @return An \code{ALKr} object, containing a \eqn{i \times j} matrix with the
+#' probability of an individual of length \code{i} having age \code{j}, i.e.
+#' \eqn{P(j|i)}, a \eqn{i \times j} matrix with the estimated number of
+#' individuals of length \code{i} and age \code{j}, and information about the
+#' method used to generate the key.
 #' 
 #' @references
 #' Bartoo, N.W., Parker, K.R. (1983). Stochastic age-frequency estimation using
@@ -118,7 +121,8 @@
 #' @export
 #' @aliases inverse_ALK kimura_chikuni hoenig_heisey gascuel
 inverse_ALK <- function(x, fi1, fi2,
-                    age_classes = colnames(x), length_classes = rownames(x)) {
+                        age_classes = colnames(x), length_classes = rownames(x),
+                        name = "", description = "") {
   
   if (any(c(nrow(x) != length(fi1), length(fi1) != length(fi2))))
     stop("length of f1 and f2 must be equal to the number of rows of x")
@@ -131,5 +135,7 @@ inverse_ALK <- function(x, fi1, fi2,
   new("ALKr", alk = calc_ALK(nij2),
       N = nij2,
       method = "Classic Inverse ALK",
-      parameters = list())
+      parameters = list(),
+      name = name,
+      description = description)
 }

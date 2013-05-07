@@ -38,3 +38,4 @@ calc_invALK <- function(x, fi) {
   denom[denom==0] <- 1
   t(t(N) / denom)
 }
+

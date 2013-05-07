@@ -1,3 +1,20 @@
+ALKr 0.5.3
+==========
+
+* Fixes a bug on `hoenig_heisey.r`
+
+ALKr 0.5.2
+==========
+
+* `ALKr` class now has acessors for all slots and setters for `name` and
+  `description`
+* `ALKr` class and methods are now documented
+
+ALKr 0.5.1
+==========
+
+* `ALKr` objects now have `name` and `description` slots
+
 ALKr 0.5
 ==========
 

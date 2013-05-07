@@ -3,9 +3,8 @@
 #' @export
 gascuel <- function(x, fi1, fi2, initial_values,
                     threshold = 0.0001, maxiter = 2000,
-                    age_classes = colnames(x), length_classes = rownames(x)) {
-  
-  #sourceCpp("gascuel.cpp")
+                    age_classes = colnames(x), length_classes = rownames(x),
+                    name = "", description = "") {
   
   nij <- fi1 * calc_ALK(x)
   li <- as.numeric(length_classes)
@@ -25,6 +24,7 @@ gascuel <- function(x, fi1, fi2, initial_values,
                                   threshold = threshold, maxiter = maxiter) * sum(fi2))
   
   rownames(result) <- rownames(nij)
+  colnames(result) <- colnames(nij)
   
   new("ALKr",
       alk = result,
@@ -35,6 +35,8 @@ gascuel <- function(x, fi1, fi2, initial_values,
         alpha = optimal$par[1],
         beta = optimal$par[2],
         gamma = optimal$par[3],
-        Converged = optimal$convergence == 0)
+        Converged = optimal$convergence == 0),
+      name = name,
+      description = description
   )
 }

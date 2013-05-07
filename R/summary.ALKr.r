@@ -42,6 +42,8 @@ summary.ALKr <- function(object, length_classes = NULL, ...) {
       mean_lj = lj,
       var_lj = vlj,
       method = object@method,
-      parameters = object@parameters
+      parameters = object@parameters,
+      name = object@name,
+      description = object@description
   )
 }
