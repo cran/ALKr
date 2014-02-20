@@ -2,8 +2,7 @@
 \alias{summary.ALKr}
 \title{Summarizing ALK Estimations}
 \usage{
-  \method{summary}{ALKr} (object, length_classes = NULL,
-    ...)
+\method{summary}{ALKr}(object, length_classes = NULL, ...)
 }
 \arguments{
   \item{object}{An \code{ALKr} object.}
@@ -15,17 +14,17 @@
   \item{...}{other arguments (currently ignored)}
 }
 \value{
-  A \code{summary_ALKr} object, containing the mean
-  length-at-age, the variance of the length-at-age, and the
-  proportion of the age class in the population, for each
-  age class. The name of the method used to calculate the
-  ALK and its parameters are also included.
+A \code{summary_ALKr} object, containing the mean
+length-at-age, the variance of the length-at-age, and the
+proportion of the age class in the population, for each age
+class. The name of the method used to calculate the ALK and
+its parameters are also included.
 }
 \description{
-  \code{summary} method for class "\code{ALKr}". Returns
-  the mean length-at-age, the variance of the
-  length-at-age, and the proportion of the age class in the
-  population, for each age class.
+\code{summary} method for class "\code{ALKr}". Returns the
+mean length-at-age, the variance of the length-at-age, and
+the proportion of the age class in the population, for each
+age class.
 }
 \examples{
 data(hom)

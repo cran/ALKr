@@ -1,3 +1,4 @@
+#' @import methods
 setGeneric("alk", function(object) standardGeneric("alk"))
 setGeneric("N", function(object) standardGeneric("N"))
 setGeneric("method", function(object) standardGeneric("method"))

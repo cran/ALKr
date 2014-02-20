@@ -2,10 +2,8 @@
 \alias{classic_ALK}
 \title{Classic Age-Length Key}
 \usage{
-  classic_ALK(x, fi = rowSums(x),
-    age_classes = colnames(x),
-    length_classes = rownames(x), name = "",
-    description = "")
+classic_ALK(x, fi = rowSums(x), age_classes = colnames(x),
+  length_classes = rownames(x), name = "", description = "")
 }
 \arguments{
   \item{x}{A \eqn{i \times j} matrix with the count of
@@ -27,27 +25,27 @@
   \item{description}{A string describing the ALK.}
 }
 \value{
-  An \code{ALKr} object, containing a \eqn{i \times j}
-  matrix with the probability of an individual of length
-  \code{i} having age \code{j}, i.e. \eqn{P(j|i)}, a \eqn{i
-  \times j} matrix with the estimated number of individuals
-  of length \code{i} and age \code{j}, and information
-  about the method used to generate the key.
+An \code{ALKr} object, containing a \eqn{i \times j} matrix
+with the probability of an individual of length \code{i}
+having age \code{j}, i.e. \eqn{P(j|i)}, a \eqn{i \times j}
+matrix with the estimated number of individuals of length
+\code{i} and age \code{j}, and information about the method
+used to generate the key.
 }
 \description{
-  \code{classicALK} returns an Age-Length Key calculated
-  from a matrix with the count of individuals per age- and
-  length-class, as described by Fridriksson (1934).
+\code{classicALK} returns an Age-Length Key calculated from
+a matrix with the count of individuals per age- and
+length-class, as described by Fridriksson (1934).
 }
 \examples{
 data(hom)
 classic_ALK(hom$otoliths[[1]], fi = hom$F1992)
 }
 \references{
-  Fridriksson, A. (1934). On the calculation of
-  age-distribution within a stock of cod by means of
-  relatively few age determinations as a key to
-  measurements on a large scale. \emph{Rapp. P.-V. CIEM},
-  \strong{86}, 1-5.
+Fridriksson, A. (1934). On the calculation of
+age-distribution within a stock of cod by means of
+relatively few age determinations as a key to measurements
+on a large scale. \emph{Rapp. P.-V. CIEM}, \strong{86},
+1-5.
 }
 

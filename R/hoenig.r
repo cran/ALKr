@@ -43,7 +43,6 @@
 #' `details'.
 #' @param name A string with the name of the ALK.
 #' @param description A string describing the ALK.
-
 #' 
 #' @return A list of \code{ALKr} objects, one for each item in the \code{fiz}
 #' list, each containing a matrix with the probability of an individual of age
@@ -74,6 +73,7 @@
 #'        fik = replicate(10, hom$F1992, simplify = FALSE),
 #'        fiz = list(hom$F1993))
 #'        
+#' @import Rcpp
 #' @export
 hoenig <- function(Ak, fik, fiz, threshold = 1, maxiter = 2000,
                    age_classes = colnames(Ak[[1]]),

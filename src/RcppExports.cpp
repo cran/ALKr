@@ -9,43 +9,58 @@ using namespace Rcpp;
 double optimGascuel(NumericVector params, NumericVector lj, NumericVector li, NumericVector pi_, double threshold, int maxiter);
 RcppExport SEXP ALKr_optimGascuel(SEXP paramsSEXP, SEXP ljSEXP, SEXP liSEXP, SEXP pi_SEXP, SEXP thresholdSEXP, SEXP maxiterSEXP) {
 BEGIN_RCPP
-    Rcpp::RNGScope __rngScope;
-    NumericVector params = Rcpp::as<NumericVector >(paramsSEXP);
-    NumericVector lj = Rcpp::as<NumericVector >(ljSEXP);
-    NumericVector li = Rcpp::as<NumericVector >(liSEXP);
-    NumericVector pi_ = Rcpp::as<NumericVector >(pi_SEXP);
-    double threshold = Rcpp::as<double >(thresholdSEXP);
-    int maxiter = Rcpp::as<int >(maxiterSEXP);
-    double __result = optimGascuel(params, lj, li, pi_, threshold, maxiter);
-    return Rcpp::wrap(__result);
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< NumericVector >::type params(paramsSEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type lj(ljSEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type li(liSEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type pi_(pi_SEXP );
+        Rcpp::traits::input_parameter< double >::type threshold(thresholdSEXP );
+        Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP );
+        double __result = optimGascuel(params, lj, li, pi_, threshold, maxiter);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
 END_RCPP
 }
 // finalGascuel
 NumericMatrix finalGascuel(NumericVector params, NumericVector lj, NumericVector li, NumericVector pi_, double threshold, int maxiter);
 RcppExport SEXP ALKr_finalGascuel(SEXP paramsSEXP, SEXP ljSEXP, SEXP liSEXP, SEXP pi_SEXP, SEXP thresholdSEXP, SEXP maxiterSEXP) {
 BEGIN_RCPP
-    Rcpp::RNGScope __rngScope;
-    NumericVector params = Rcpp::as<NumericVector >(paramsSEXP);
-    NumericVector lj = Rcpp::as<NumericVector >(ljSEXP);
-    NumericVector li = Rcpp::as<NumericVector >(liSEXP);
-    NumericVector pi_ = Rcpp::as<NumericVector >(pi_SEXP);
-    double threshold = Rcpp::as<double >(thresholdSEXP);
-    int maxiter = Rcpp::as<int >(maxiterSEXP);
-    NumericMatrix __result = finalGascuel(params, lj, li, pi_, threshold, maxiter);
-    return Rcpp::wrap(__result);
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< NumericVector >::type params(paramsSEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type lj(ljSEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type li(liSEXP );
+        Rcpp::traits::input_parameter< NumericVector >::type pi_(pi_SEXP );
+        Rcpp::traits::input_parameter< double >::type threshold(thresholdSEXP );
+        Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP );
+        NumericMatrix __result = finalGascuel(params, lj, li, pi_, threshold, maxiter);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
 END_RCPP
 }
 // hoenigC
 List hoenigC(List AAk, List FFik, List FFiz, int threshold, int maxiter);
 RcppExport SEXP ALKr_hoenigC(SEXP AAkSEXP, SEXP FFikSEXP, SEXP FFizSEXP, SEXP thresholdSEXP, SEXP maxiterSEXP) {
 BEGIN_RCPP
-    Rcpp::RNGScope __rngScope;
-    List AAk = Rcpp::as<List >(AAkSEXP);
-    List FFik = Rcpp::as<List >(FFikSEXP);
-    List FFiz = Rcpp::as<List >(FFizSEXP);
-    int threshold = Rcpp::as<int >(thresholdSEXP);
-    int maxiter = Rcpp::as<int >(maxiterSEXP);
-    List __result = hoenigC(AAk, FFik, FFiz, threshold, maxiter);
-    return Rcpp::wrap(__result);
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< List >::type AAk(AAkSEXP );
+        Rcpp::traits::input_parameter< List >::type FFik(FFikSEXP );
+        Rcpp::traits::input_parameter< List >::type FFiz(FFizSEXP );
+        Rcpp::traits::input_parameter< int >::type threshold(thresholdSEXP );
+        Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP );
+        List __result = hoenigC(AAk, FFik, FFiz, threshold, maxiter);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
 END_RCPP
 }
